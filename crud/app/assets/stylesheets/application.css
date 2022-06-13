@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+html{
+    background-color: rgb(20,29,38); 
+}
+
+table{
+    box-shadow: rgba(88, 88, 88, 0.35) 0px 3px 15px;
+}
+
+.crud_container{
+    align-items: center;
+    padding: 10% 10% 0 10%;
+    background-color: rgb(20,29,38); 
+}
+
+.shorten_input{
+    padding-bottom: .5rem;
+}
