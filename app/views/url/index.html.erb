@@ -13,8 +13,9 @@
         <a class="navbar-brand" href="#">Url shortener</a>
       </div>
     </nav>
+
     <div class="crud_container">
-			<div class="crud_container">
+    
       <div class="row justify-content-end shorten_input add">
         <div class ="col-5" >
 					<%= form_with model: @url, class: 'form-group' do |form| %>
@@ -40,8 +41,8 @@
           <% @urls.each do |i| %>
             <tr>
               <th scope="row"><%= i.title %></th>
-              <td><%= i.value %></td>
-              <td><%= i.slug %></td>
+              <td><a href="<%= i.value %>"><%= i.value %></a></td>
+              <td><a href="<%= i.slug %>"><%= i.slug %></a></td>
               <td>
               <form method="post" action="/delete_url" class="btn">
                 <input type="hidden" name ="id" value="<%= i.id %>" class="form-control" placeholder="privateNumber" method="post" action="/delete_url">
@@ -54,7 +55,7 @@
           <% end %>
                     
         </tbody>
-            </table>
-        </div>
-    </body>
+      </table>
+    </div>
+  </body>
 </html>
