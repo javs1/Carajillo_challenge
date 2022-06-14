@@ -23,10 +23,10 @@ table{
 
 .crud_container{
     align-items: center;
-    padding: 10% 10% 0 10%;
+    padding: 5% 5% 0 5%;
     background-color: rgb(20,29,38); 
 }
 
-.shorten_input{
+.add{
     padding-bottom: .5rem;
 }
