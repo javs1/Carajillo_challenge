@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "url#index"
   post "/", to: "url#create"
   post "delete_url", to: "url#delete"
-  get '/:id' => "shortener/shortened_urls#show"
+  
   resources :url
   # Defines the root path route ("/")
   # root "articles#index"

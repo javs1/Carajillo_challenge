@@ -1,4 +1,5 @@
 class UrlController < ApplicationController
+  require 'securerandom'
   skip_before_action :verify_authenticity_token
   def index
     @urls=Url.all
@@ -10,7 +11,7 @@ class UrlController < ApplicationController
 
   def create
     @url = Url.new(url_params)
-    @url.slug = Shortener::ShortenedUrl.generate("http://example.com")
+    @url.slug = "http://localhost:3000/"+SecureRandom.alphanumeric(8)
     if @url.save
       redirect_to "/"
     else
@@ -23,6 +24,10 @@ class UrlController < ApplicationController
     @url = Url.find(params[:id]) 
     @url.destroy
     redirect_to "/"
+  end
+
+  def show
+    @urls=Url.all
   end
 
   private
